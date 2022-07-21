@@ -1,0 +1,71 @@
+﻿@using System.Security.Claims
+
+@model E_Com.Models.MyViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href='https://fonts.googleapis.com/css?family=Antonio' rel='stylesheet'>
+    <title>Lexicon Cars</title>
+</head>
+
+
+<section class="first">
+    @if (TempData["msg"] != null)
+    {
+        <div class="alert alert-danger">@TempData["msg"]</div>       
+    }
+    <div class="imgslide">
+        <h1 class="tit">Lexicon. </h1>
+        <h1 class="tits">Online Shop </h1>
+        
+    </div>
+</section>
+
+<section class="secoundBase">
+
+    @foreach (var cat in Model.Categories)
+    {
+        <section class="secound">
+            <div id="p"></div>
+            <div class="title" id="CatTitle">Our @cat.Name</div>
+            <div class="cars">
+
+                @foreach (var item in Model.Products)
+                {
+                    @if (cat.Id == item.CtategoryId)
+                    {
+                        <div class="box" id="box">
+                            <img class="imgshowbox" src="@item.ImageUrl"></img>
+                            <h3>@Html.DisplayFor(modelItem => item.Name) </h3>
+                            <h4>@Html.DisplayFor(modelItem => item.Price) $</h4>
+
+                            <form asp-action="AddToCart" method="post">
+                                <input type="hidden" name="proId" value="@item.Id" />
+                                <input type="hidden" name="proName" value="@item.Name" />
+                                <input type="hidden" name="proPrice" value="@item.Price" />
+                                <input type="hidden" name="userid" value="@userId" />
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger" data-toggle="ajax-modal" 
+                                    data-target="#buyproduct" data-url="@Url.Action($"Buy/{item.Id}")">Read more</button>
+                                    <br>
+                                    <button type="submit" class="btn btn-secondary">
+                                        <i class="fa fa-cart-plus"></i> Add To Cart
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    }
+                   
+                }
+                </div>
+        </section>
+    }
+</section>
+
+

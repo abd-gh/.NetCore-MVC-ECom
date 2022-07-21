@@ -1,0 +1,41 @@
+﻿@model Product
+
+<div class="modal fade" id="buyproduct">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <form asp-action="AddToCart" method="post">
+                    <div class="form-group PopupCar">
+                        <img class="imgshowDet" src="@Html.DisplayFor(model => model.ImageUrl)"></img>
+                        <div class="PopupCarInfo">
+
+                        <label > <span style="font-weight:bold; font-size:12px;">@Html.DisplayNameFor(model => model.Name)</span><span>:  @Model.Name</span> </label>
+                        <label > 
+                            <span style="font-weight:bold; font-size:12px;">@Html.DisplayNameFor(model => model.State)</span>
+                            @if( Model.State==false)
+                                {
+                                    <span>: Used</span>
+                                }
+                                else
+                                {
+                                <span>: New</span>
+                                }
+
+                            </label>
+                        <label > <span style="font-weight:bold; font-size:12px;">@Html.DisplayNameFor(model => model.Description)</span><span>:  @Model.Description</span> </label>
+                        <label > <span style="font-weight:bold; font-size:12px;">@Html.DisplayNameFor(model => model.Price)</span><span>:  @Model.Price Kr</span> </label>
+                            <input type="hidden" name="proId" value="@Model.Id" />
+                            <input type="hidden" name="proName" value="@Model.Name" />
+                            <input type="hidden" name="proPrice" value="@Model.Price" />
+                           
+                        <button type="submit" class="btn btn-secondary">
+                         <i class="fa fa-cart-plus"></i> Add To Cart
+                         </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

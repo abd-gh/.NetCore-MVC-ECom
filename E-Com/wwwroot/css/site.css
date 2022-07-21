@@ -1,0 +1,325 @@
+html {
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    min-height: 100%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+body {
+    /* font-family: "Roboto", sans-serif;*/
+    /*height: fit-content;
+        background: #e9edf1;
+        font-family: 'Antonio';
+    */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* overflow-x: hidden;*/
+}
+
+.imgshow {
+    width: 100px;
+    height: 50px;
+}
+
+.imgshowDet {
+    width: 250px;
+    height: 250px;
+}
+
+.first {
+    height: 80vh;
+}
+
+.imgslide {
+    width: 100%;
+    height: 100%;
+    background: url(https://cdn.wallpapersafari.com/70/10/VQWxKr.jpg );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: nowrap; */
+    /* align-content: stretch; */
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.removemarg {
+    margin: 0px !important;
+}
+
+.secoundBase {
+    height: fit-content;
+}
+.secound {
+    
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+}
+
+.cars {
+    margin-left: 7%;
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#box {
+    display: flex;
+    height: 350px;
+    width: 233px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    border-top: 4px solid #bcc9da;
+}
+
+.imgshowbox {
+    width: 95%;
+    height: 40%;
+    margin-bottom: 10px;
+}
+
+.PopupCar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.PopupCarInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.count {
+    border-style: solid;
+    border-color: #777;
+    padding: 0px 4px;
+    border-radius: 50%;
+}
+
+.badge {
+    color: #8c8989 !important;
+}
+
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 13px;
+}
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+#lblCartCount {
+    font-size: 12px;
+    background: #e3e3e3;
+    
+    color: #656060 !important;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+.container {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.AddMarg {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.alert {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+.pic {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.table thead {
+    background-color: #21cf95;
+}
+
+    .table thead th {
+        padding: 30px;
+        font-size: 14px;
+        color: white;
+    }
+
+.table tbody td input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    position: relative;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.container .table-wrap {
+    margin: 20px auto;
+    overflow-x: auto
+}
+
+    .container .table-wrap::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .container .table-wrap::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-image: linear-gradient(to right, #5D7ECD, #0C91E6);
+    }
+
+.table > :not(caption) > * > * {
+    padding: 2rem 0.5rem;
+}
+
+.input {
+    width: 30px;
+    height: 30px;
+    color: black;
+    font-weight: 600;
+    outline: none;
+    padding: 8px;
+}
+
+::placeholder {
+    color: black;
+    font-weight: 600;
+}
+
+.table tbody td input[type="checkbox"]:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f00c";
+    color: #fff;
+    font-size: 15px;
+    display: none
+}
+
+.table tbody td input[type="checkbox"]:checked,
+.table tbody td input[type="checkbox"]:checked:hover {
+    background-color: #21cf95;
+}
+
+    .table tbody td input[type="checkbox"]:checked::after {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+.table tbody td input[type="checkbox"]:hover {
+    background-color: #ddd;
+}
+
+.table tbody td {
+    padding: 30px;
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 600;
+}
+
+    .table tbody td .fa-times {
+        color: #D32F2F;
+    }
+
+
+.text-muted {
+    font-size: 12.5px;
+}
+
+.table tbody tr td:nth-of-type(3) {
+    min-width: 320px;
+}
+
+@media(min-width: 992px) {
+    .container .table-wrap {
+        overflow: hidden;
+    }
+}
+#CartmsgS {
+    width: 31% !important;
+    position: relative !important;
+}
+#CartmsgF{
+    width: 31% !important;
+    position: relative !important;
+}
+
+.tit {
+    color: #111;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 180px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
+
+.tits {
+    color: #111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 0 0 72px;
+    text-align: center;
+    margin-right:80px;
+}
+
+#fott{
+    margin-left:15%;
+}
